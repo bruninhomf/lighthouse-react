@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# CONFIGURAÇÃO Lighthouse 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Lighthouse foi configurado localhost e no github. 
+Ao configurar o Lighthouse localhost temos um ganho muito grande em tempo de resposta e confiabilidade, não tendo perda de velocidade ou ocilação devido a instabilidade da internet. 
+Já a integração feita com o github temos praticidade na verificações, pois a cada commit será feito um pipeline onde irá rodar o script e apresentar o resultado da performace por um link do lighthouse. 
 
-## Available Scripts
+## Configuração localhost
 
-In the project directory, you can run:
+O arquivo lighthouse.js é responsável pela configuração localhost
+É ncecessario instalar as dempendencias do linghthouse utilizando o seguinte comando 'npm install -g @lhci/cli'
+Para verificar a performace do projeto utiliza-se o seguinte comando 'lhci autorun'
 
-### `npm start`
+## Configuração github
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para configurar o github é preciso de configurar localhost primeiro, após a configuração localhost abra o repositorio no github > configurações > secrets > Dependabot > Adicione as credenciais fornecidas ao autorizar a integração do app com o github. 
+Cire uma pasta de nome .github > dentro dela crie outra de nome workflows e adicione um arquivo de extensão .yaml para ser executado no pipeline do github. 
+O arquivo 'lighthouse-ci.yaml' é responsável pela configuração do pipeline/github
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Segue alguns links auxiliares e documentações: 
+- [Lighthouse CI](https://web.dev/lighthouse-ci/).
+- [App de integração github](https://github.com/apps/lighthouse-ci).
+- [Github](https://github.com/GoogleChrome/lighthouse-ci).
